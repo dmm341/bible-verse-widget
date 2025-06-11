@@ -29,7 +29,7 @@ const VerseWidget = () => {
     fetchVerse()
   }, [])
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+    <div className="bg-gray-200 p-6 rounded-lg shadow-lg max-w-md w-full text-center">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Verse of the Day</h2>
 
       {loading ? (
