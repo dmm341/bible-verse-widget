@@ -4,7 +4,7 @@ import VerseWidget from './components/VerseWidget'
 const App = () => {
   return (
     <div>
-       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+       <div className="min-h-screen bg-purple-500 flex items-center justify-center p-4">
       <VerseWidget />
     </div>
     </div>
