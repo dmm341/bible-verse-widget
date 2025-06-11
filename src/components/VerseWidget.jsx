@@ -4,6 +4,8 @@ const VerseWidget = () => {
   const [verse, setVerse] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const [version, setVersion] = useState("WEB") // default version name
+
   const fetchVerse = async () => {
     setLoading(true)
     try {
@@ -36,11 +38,23 @@ const VerseWidget = () => {
         <p className="text-red-500">Something went wrong. Try again.</p>
       ) : (
         <>
+        <div className="mb-4">
+  <label className="text-sm text-gray-600 mr-2">Version:</label>
+  <select
+    value={version}
+    onChange={(e) => setVersion(e.target.value)}
+    className="border rounded px-2 py-1 text-sm"
+  >
+    <option value="WEB">WEB (World English Bible)</option>
+    <option value="KJV">KJV </option>
+    <option value="NIV">NIV </option>
+  </select>
+</div>
+
           <p className="italic text-gray-700 mb-2">"{verse.text}"</p>
           <p className="text-sm text-gray-500 font-medium">
     {verse.bookname} {verse.chapter}:{verse.verse}
   </p>
-          
         </>
       )}
 <button onClick={fetchVerse} 
